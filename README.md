@@ -1,3 +1,6 @@
+# Warning
+Do not scroll if you have Trypophobia (fear of holes) as the images used in the first versions may be irritating to you. After official release I will fix that problem.
+
 # simple4x
 This project aims to create a simple 4x game using Golang. I want to try and build a fun simple 4x game and put it on App store and Google play for people to enjoy.
 
