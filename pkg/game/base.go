@@ -21,7 +21,7 @@ func NewGame(rows, columns int) *Game {
 	g := &Game{
 		Rows:       rows,
 		Columns:    columns,
-		TickerChan: time.NewTicker(100 * time.Millisecond).C,
+		TickerChan: time.NewTicker(200 * time.Millisecond).C,
 		Grid:       grid.NewGrid(rows, columns, height),
 		Debugger:   debugger.NewDebugger(),
 	}

@@ -2,6 +2,7 @@ package grid
 
 import (
 	"image/color"
+	"tidy/pkg/configs"
 	"tidy/pkg/geometry"
 
 	"github.com/hajimehoshi/ebiten/v2"
@@ -15,12 +16,12 @@ type Hex struct {
 	center geometry.Point
 }
 
-func NewHex(hex *geometry.Hex, color color.Color, column, row int, center geometry.Point) Hex {
+func NewHex(hex *geometry.Hex, color color.Color, row, column int, center geometry.Point) Hex {
 	return Hex{
 		hex:    hex,
 		color:  color,
-		column: column,
 		row:    row,
+		column: column,
 		center: center,
 	}
 }
@@ -32,30 +33,30 @@ func (h Hex) Draw(image *ebiten.Image, debug bool) {
 
 // Sets color to selected color
 func (h *Hex) Select() {
-	h.color = color.RGBA{0, 0, 255, 255}
+	h.color = configs.SelectedColor
 }
 
 // Sets color to unselected color
 func (h *Hex) Unselect() {
-	h.color = color.White
+	h.color = configs.DefaultColor
 }
 
-func (h Hex) Hex() *geometry.Hex {
+func (h *Hex) Hex() *geometry.Hex {
 	return h.hex
 }
 
-func (h Hex) Color() color.Color {
+func (h *Hex) Color() color.Color {
 	return h.color
 }
 
-func (h Hex) Column() int {
+func (h *Hex) Column() int {
 	return h.column
 }
 
-func (h Hex) Row() int {
+func (h *Hex) Row() int {
 	return h.row
 }
 
-func (h Hex) Center() geometry.Point {
+func (h *Hex) Center() geometry.Point {
 	return h.center
 }
